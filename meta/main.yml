@@ -1,0 +1,17 @@
+---
+dependencies: []
+galaxy_info:
+  author: Sylvain Mougenot
+  role_name: pi_switch_off_button
+  description: Software required for a Rasbperry Pi shutdown button.
+  license: license (MIT)
+  min_ansible_version: 2.4
+  platforms:
+    - name: Raspian
+      versions:
+        - buster
+  galaxy_tags:
+    - raspberry
+    - pi
+    - shutdown
+    - button

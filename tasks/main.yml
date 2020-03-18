@@ -1,0 +1,40 @@
+---
+# Install script + service in order to shutdown Pi using a button
+#
+
+- name: 'Directory : intallation destination'
+  file:
+    path:  '{{ gpio_shutdown_install_dir }}'
+    state: 'directory'
+    owner: 'root'
+    group: 'root'
+    mode:  0775
+
+- name: 'Template : Deploy python script'
+  template:
+    src:   'shutdown_button.py'
+    dest:  '{{ gpio_shutdown_install_dir }}/'
+    owner: 'root'
+    group: 'root'
+    mode:  0774
+  notify:  'restart shutdown_button'
+
+- name: 'Template : Deploy service script'
+  template:
+    src:   'shutdown_button.service'
+    dest:  '{{ gpio_shutdown_install_dir }}/'
+    owner: 'root'
+    group: 'root'
+    mode:  0664
+  notify:  'restart shutdown_button'
+
+- name: 'Link : Install service'
+  file:
+    src:   '{{ gpio_shutdown_install_dir }}/shutdown_button.service'
+    dest:  '/lib/systemd/system/shutdown_button.service'
+    state: 'link'
+    owner: 'root'
+    group: 'root'
+    mode:  0664
+  notify:  'restart shutdown_button'
+

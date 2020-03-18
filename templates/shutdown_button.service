@@ -1,0 +1,10 @@
+
+[Unit]
+Description=Shutdown button service
+Requires=local-fs.target
+
+[Service]
+Type=idle
+ExecStart={{ gpio_shutdown_install_dir }}/shutdown_button.py
+Restart=always
+RestartSec=2

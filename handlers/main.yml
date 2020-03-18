@@ -1,0 +1,8 @@
+---
+
+- name: 'restart shutdown_button'
+  service:
+    name: 'shutdown_button'
+    state: 'restarted'
+    enabled: true
+    daemon_reload: true

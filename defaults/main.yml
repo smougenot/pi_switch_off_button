@@ -1,0 +1,8 @@
+# -------------------------
+# Button shutdown
+# -------------------------
+---
+# GPIO pin number for shutdown
+gpio_shutdown_pin_number: 3
+# Location of the files
+gpio_shutdown_install_dir: '/opt/shutdown_button'
