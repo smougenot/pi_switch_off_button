@@ -1,0 +1,28 @@
+---
+language: python
+services: docker
+
+env:
+  global:
+    - ROLE_NAME: pi_switch_off_button
+  matrix:
+#   - MOLECULE_DISTRO: debian9
+    - MOLECULE_DISTRO: debian10
+
+install:
+  # Install test dependencies.
+  - pip install molecule yamllint ansible-lint docker
+
+before_script:
+  # Use actual Ansible Galaxy role name for the project directory.
+  - cd ../
+  - mv $ROLE_NAME smougenot.$ROLE_NAME
+  - cd smougenot.$ROLE_NAME
+
+script:
+  # Run tests.
+  - yamllint .
+  - ansible-lint
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
