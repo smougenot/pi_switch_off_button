@@ -9,4 +9,4 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - role: 'pi_switch_off_button'
+    - role: 'smougenot.pi_switch_off_button'
