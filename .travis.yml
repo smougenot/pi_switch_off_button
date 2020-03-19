@@ -21,10 +21,8 @@ before_script:
 
 script:
   # Run tests.
-  - |
-  set -e
-  yamllint .
-  ansible-lint
+  - yamllint .
+  - ansible-lint
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
