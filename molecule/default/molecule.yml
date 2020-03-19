@@ -9,7 +9,7 @@ lint: |
   ansible-lint
 platforms:
   - name: instance
-    image: docker.io/pycontribs/centos:7
+    image: centos/systemd:latest
     pre_build_image: true
 provisioner:
   name: ansible
