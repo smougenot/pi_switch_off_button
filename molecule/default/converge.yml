@@ -7,6 +7,8 @@
     - name: Update apt cache.
       apt: update_cache=yes cache_valid_time=600
       when: ansible_os_family == 'Debian'
+    - debug:
+        var: ansible_os_family
 
   roles:
     - role: 'smougenot.pi_switch_off_button'
