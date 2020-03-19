@@ -6,7 +6,7 @@ env:
   global:
     - ROLE_NAME: pi_switch_off_button
   matrix:
-    - MOLECULE_DISTRO: debian9
+#   - MOLECULE_DISTRO: debian9
     - MOLECULE_DISTRO: debian10
 
 install:
