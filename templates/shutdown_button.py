@@ -25,8 +25,8 @@ try:
     GPIO.wait_for_edge(gpio_pin_number, GPIO.FALLING)
     #Use falling edge detection to see if pin is pulled
     #low to avoid repeated polling
-    os.system("sudo shutdown -h now")
-    #Send command to system to shutdown
+    os.system("sudo shutdown -h +1 'Shutdown button triggering shutdown'")
+    #Send command to system to shutdown (delay is 1 minute, this allows message to be sent to all current users)
 except:
     pass
 
